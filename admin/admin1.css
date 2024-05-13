@@ -27,3 +27,7 @@ body {
     /* Ajusta el espacio entre la línea y este elemento */
 
 }
+
+.empleados-portlet{
+    height: fit-content;
+}
