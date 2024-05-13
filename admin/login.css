@@ -1,0 +1,8 @@
+body {
+    background: linear-gradient(to bottom, rgb(36, 35, 35), #f03a3a);
+    /* linear-gradiente método de css para hacer degradados */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /*se ajusta a la altura total de la pantalla */
+}
