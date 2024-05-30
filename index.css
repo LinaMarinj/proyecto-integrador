@@ -1,70 +1,32 @@
-body {
-    background-image: url(img/fondo\ mezclado.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 5vh;
-}
-
-.container img {
-    width: 200px;
-    height: auto;
-}
-
-.hr-1 {
-    margin: 10px auto; 
-    background-color: red;
-    height: 2px;
-    border: none;
-    width: 97%;
-}
-
-
-
-.titulo-y-botones {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px; 
-    margin-bottom: 100px; 
-}
-
-h1 {
-    color: white;
-    font-size: 45px;
-    font-weight: bold;
-    margin-bottom: 20px; 
-    text-align: center; 
-    max-width: 80%; 
-    margin-left: auto; 
-    margin-right: auto; 
-    margin-top: 50px; 
-}
-
-.ver-nomina, .administradores {
-    background-color: red;
-    color: white;
-    padding: 15px 40px;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    width: 315px; 
-    margin-bottom: 10px; 
-}
-
-.hr-2 {   
-        margin-top: 20px; 
-        margin-bottom: 20px;
-        background-color: red;
-        height: 2px;
-        border: none;
-        width: 97%;  
-        margin-left: 20px; 
-}
+#particles-js {
+    background: linear-gradient(176deg, #080810, #0f42af);
+  }
+  
+  .bg-red-1200 {
+    background-color: #0f42af;
+  }
+  
+  .hover\:bg-red-1200:hover {
+    background: linear-gradient(176deg, #0f42af, #0f42afe8);
+  }
+  
+  .text-red-1200 {
+    color: #0f42af;
+  }
+  
+  @keyframes typing {
+    0% { width: 0; }
+    50%, 100% { width: 100%; }
+  }
+  
+  h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 8s steps(40, end) infinite,
+    blink-caret .75s step-end infinite;
+  }
+  
+  #fondo-index{
+    background-image: url('img/fondoInicio.webp');
+  }
+  
