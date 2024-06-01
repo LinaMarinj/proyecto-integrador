@@ -17,3 +17,15 @@ body{
     width: 50%;
     
 }
+
+.botones {
+    background-color: #0f42af;
+    color: white;
+    
+
+}
+
+.botones:hover{
+    background: linear-gradient(176deg,  #0f42af,  #335ebd);
+  
+}

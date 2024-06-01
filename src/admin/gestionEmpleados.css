@@ -26,7 +26,8 @@ tr:hover {
 .botonInforEmpleado::after {
     content: "Ver más información";
     position: absolute;
-    top: -3rem; /* Ajusta la posición vertical del mensaje según el tamaño del botón */
+    top: -3rem;
+    /* Ajusta la posición vertical del mensaje según el tamaño del botón */
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.904);
@@ -35,14 +36,19 @@ tr:hover {
     border-radius: 0.25rem;
     font-size: 0.75rem;
     white-space: nowrap;
-    opacity: 0; /* Inicialmente invisible */
-    pointer-events: none; /* Evita la interacción con el mensaje */
-    transition: opacity 0.3s ease; /* Agrega una transición suave */
-    z-index: 10; /* Asegura que el mensaje esté por encima del botón */
+    opacity: 0;
+    /* Inicialmente invisible */
+    pointer-events: none;
+    /* Evita la interacción con el mensaje */
+    transition: opacity 0.3s ease;
+    /* Agrega una transición suave */
+    z-index: 10;
+    /* Asegura que el mensaje esté por encima del botón */
 }
 
 .botonInforEmpleado:hover::after {
-    opacity: 1; /* Hace visible el mensaje al pasar el cursor */
+    opacity: 1;
+    /* Hace visible el mensaje al pasar el cursor */
 }
 
 
@@ -54,13 +60,13 @@ tr:hover {
 
 .botonliquidar:hover {
     background: linear-gradient(176deg, #0f42af, #0f42af);
-  
+
 }
 
 .botonliquidar::after {
     content: "Liquidar";
     position: absolute;
-    top: -3rem; 
+    top: -3rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.904);
@@ -69,12 +75,25 @@ tr:hover {
     border-radius: 0.25rem;
     font-size: 0.75rem;
     white-space: nowrap;
-    opacity: 0; 
-    pointer-events: none; 
-    transition: opacity 0.3s ease; 
-    z-index: 10; 
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
 }
 
 .botonliquidar:hover::after {
-    opacity: 1; 
+    opacity: 1;
+}
+
+
+#botonNuevoEmpleado {
+    background-color: #0f42af;
+    color: white;
+
+}
+
+
+#botonNuevoEmpleado:hover {
+    background: linear-gradient(176deg, #0f42af, #335ebd);
+
 }

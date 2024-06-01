@@ -16,14 +16,12 @@ body{
 }
 
 
+
 .botones {
     background-color: #0f42af;
     color: white;
-    width: 70px;
-    height: 40px;
-    border-radius: 5px;
-    margin-left: 5%;
-    margin-top: 10%;
+    
+
 }
 
 .botones:hover{
