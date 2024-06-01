@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquidación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="Liquidacion.css">
+
+</head>
+
+<body>
+
+    <div class="w-full mt-20">
+        <h1 style="font-weight: bold; font-size: 20px;" class="text-black">Liquidar Empleado</h1>
+        <hr class="mt-4">
+    </div>
+
+    <hr>
+    <section class="contenedorLiquidar">
+
+        <form action="#" method="post">
+            <div style="display: flex; justify-content: space-between;">
+                <div>
+                    <label for="fecha_ingreso">Fecha de ingreso:</label><br>
+                    <input type="date" id="fecha_ingreso" name="fecha_ingreso" required><br><br>
+                </div>
+                <div>
+                    <label for="fecha_salida">Fecha de salida:</label><br>
+                    <input type="date" id="fecha_salida" name="fecha_salida" required><br><br>
+                </div>
+            </div>
+
+            <label for="salario_mensual">Salario mensual: </label><br>
+            <input type="text" id="salario_mensual" name="salario_mensual" required><br><br>
+
+            <label for="tiene_auxilio_transporte">¿Tiene derecho a auxilio de transporte?</label><br>
+            <input type="radio" id="tiene_auxilio_transporte_si" name="tiene_auxilio_transporte" value="si">
+            <label for="tiene_auxilio_transporte_si">Sí</label><br>
+            <input type="radio" id="tiene_auxilio_transporte_no" name="tiene_auxilio_transporte" value="no">
+            <label for="tiene_auxilio_transporte_no">No</label><br>
+
+            <label for="razon_salida">Razón de la salida:</label><br>
+            <textarea id="razon_salida" name="razon_salida" rows="4" cols="50" required></textarea><br><br>
+
+            <label for="dias_vacaciones">Días de vacaciones restantes:</label><br>
+            <input type="number" id="dias_vacaciones" name="dias_vacaciones" min="0" required><br><br>
+
+            <input type="submit" value="Liquidar">
+        </form>
+
+    </section>
+
+
+
+
+    <a href="../../../index.html">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Atras
+        </button>
+    </a>
+
+
+</body>
+
+</html>

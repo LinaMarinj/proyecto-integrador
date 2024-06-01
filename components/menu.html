@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <script src="https://cdn.tailwindcss.com"></script>
+<head>
+
+  <style>
+    .menu-hidden {
+      width: 8rem;
+    }
+
+    .menu-hidden .option-menu {
+      display: none;
+    }
+
+    .menu-expanded {
+      width: 16rem;
+    }
+  </style>
+</head>
+
+<body class="flex">
+
+
+  
+  <!-- Menú lateral -->
+  <div id="sidebar" class="menu-expanded h-screen p-4 text-white transition-all duration-300">
+
+    <div class="bg-blue-800 rounded-lg h-full">
+      <div class="p-4 flex flex-wrap items-center">
+        <div class="flex items-center p-4 bg-white rounded-full mr-4">
+          <svg width="35" height="35" fill="" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z">
+            </path>
+            <path
+              d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z">
+            </path>
+            <path
+              d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z">
+            </path>
+          </svg>
+
+        </div>
+        <span class="my-4 text-center">N Solutions</span>
+      </div>
+      <ul class="space-y-2 px-4">
+        <li>
+          <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
+            onclick="toggleDropdown('menu1')">
+            <span class="flex items-center">
+              <span class="inline-block w-6 h-6">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M3 13h8V3H3v10zM3 21h8v-6H3v6zM13 3v6h8V3h-8zM13 21h8v-10h-8v10z" />
+                </svg>
+              </span>
+              <span class="ml-4 option-menu">Inicio</span>
+            </span>
+          </button>
+        </li>
+        <li>
+          <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
+            onclick="toggleDropdown('menu2')">
+            <span class="flex items-center">
+              <span class="inline-block w-6 h-6">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M21 7h-2V4c0-1.1-.9-2-2-2H7c-1.1 0-2 .9-2 2v3H3c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM7 4h10v3H7V4z" />
+                </svg>
+              </span>
+              <span class="ml-4 option-menu">Empleados</span>
+            </span>
+          </button>
+
+        </li>
+        <li>
+          <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
+            onclick="toggleDropdown('menu3')">
+            <span class="flex items-center">
+              <span class="inline-block w-6 h-6">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M20 2H4v2h16V2zm0 4H4v2h16V6zm0 4H4v10h16V10zM7 12h2v6H7v-6zm4 0h2v6h-2v-6zm4 0h2v6h-2v-6z" />
+                </svg>
+              </span>
+              <span class="ml-4 option-menu">Liquidar</span>
+            </span>
+          </button>
+
+        </li>
+        <li>
+          <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
+            onclick="toggleDropdown('menu4')">
+            <span class="flex items-center">
+              <span class="inline-block w-6 h-6">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+                  <path d="M10 17l5-5-5-5v10z" />
+                </svg>
+              </span>
+              <span class="ml-4 option-menu">Cerrar sesión</span>
+            </span>
+          </button>
+
+        </li>
+        <!-- Agregar más opciones según sea necesario -->
+      </ul>
+      <div class="p-6 flex justify-center">
+        <button id="toggleButton" class="bg-blue-600 text-white p-2 rounded-full focus:outline-none">
+          &lt;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    document.getElementById('toggleButton').addEventListener('click', function () {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('menu-expanded');
+      sidebar.classList.toggle('menu-hidden');
+      this.textContent = sidebar.classList.contains('menu-expanded') ? '<' : '>';
+    });
+  </script>
+</body>
+
+</html>
