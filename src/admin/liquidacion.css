@@ -7,8 +7,12 @@ body{
 .contenedorLiquidar {
     max-width: 640px;
     margin: 5rem auto;
+    margin-top: 12%;
+    margin-right: 50%;
     background-color: white;
     padding: 2.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+
