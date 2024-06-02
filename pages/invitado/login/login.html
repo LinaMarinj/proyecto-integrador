@@ -6,7 +6,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="login.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../../js/particles.js"></script>
+    <script src="/assets/js/particles.js"></script>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
             <div id="particles-js" class="absolute h-full left-0 lg:w-1/2 md:w-full"></div>
 
             <div id="login-fondo" class="absolute right-0 w-1/2 h-full lg:block md:hidden sm:hidden hidden">
-                <img src="../../img/fondoInicio.webp" alt="Imagen de fondo" class="object-cover object-right h-full w-full" />
+                <img src="/assets/img/fondoInicio.webp" alt="Imagen de fondo" class="object-cover object-right h-full w-full" />
                 <div class="absolute inset-0 bg-black opacity-50"></div>
             </div>
 
@@ -32,7 +32,7 @@
                             <div class="relative">
                                 <input id="email" type="email" placeholder="Ingresa tu correo electrónico"
                                     class="mt-1 py-2 px-8 w-full border border-gray-300 rounded" required />
-                                <img src="../../img/user.svg" class="absolute top-4 left-3" alt="email">
+                                <img src="/assets/img/user.svg" class="absolute top-4 left-3" alt="email">
                             </div>
                         </div>
                         <div class="mb-4 relative">
@@ -40,7 +40,7 @@
                             <div class="relative">
                                 <input id="password" type="password" placeholder="Ingresa tu contraseña"
                                     class="mt-1 py-2 px-8 w-full border border-gray-300 rounded" required />
-                                <img src="../../img/password.svg" class="absolute top-4 left-3" alt="email">
+                                <img src="/assets/img/password.svg" class="absolute top-4 left-3" alt="email">
                             </div>
                         </div>
 
@@ -50,13 +50,13 @@
                                 <label for="remember" class="text-gray-700">Recuérdame</label>
                             </div>
                             <div class="mb-4">
-                                <a href="../admin/contraseña1.html" class="text-red-1200">¿Olvidaste tu contraseña?</a>
+                                <a href="/pages/invitado/recuperar-contraseña/contraseña1.html" class="text-red-1200">¿Olvidaste tu contraseña?</a>
                             </div>
                         </section>
 
                         <section class="flex justify-center items-center">
                             <button type="submit" class="py-4 px-12 bg-red-1200 text-white rounded ">
-                                <a href="../admin/admin1.html" class="text-white">Iniciar sesión</a> 
+                                <a href="/pages/admin/admin1.html" class="text-white">Iniciar sesión</a> 
                             </button>
                         </section>
                     </form>
@@ -64,7 +64,7 @@
 
     
                 <section class="mt-4 text-center">
-                    <p class="text-gray-700">¿No eres admin? <a href="../../index.html" class="text-red-1200">Ir al home</a></p>
+                    <p class="text-gray-700">¿No eres admin? <a href="/index.html" class="text-red-1200">Ir al home</a></p>
                 </section>
 
             </div>
@@ -72,7 +72,7 @@
 
     </main>
 
-    <script src="../../js/particles-config.js"></script>
+    <script src="/assets/js/particles-config.js"></script>
 </body>
 
 </html>
