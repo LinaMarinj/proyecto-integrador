@@ -14,40 +14,49 @@
     <iframe class="h-screen" src="../../../components/menu.html" frameborder="0"></iframe>
 
 
-    <div class="w-full mt-20">
-        <h1 style="font-weight: bold; font-size: 20px;" class="text-black">Liquidar Empleado</h1>
+    <div class="w-full mt-10">
+        <h1 style="font-weight: bold; font-size: 20px;" class="text-black">Liquidación Empleado</h1>
         <hr class="mt-4">
     </div>
 
     <hr>
-    <section class="contenedorLiquidar">
-
+    <section class="contenedorLiquidar w-full max-w-lg bg-white p-8 rounded-lg shadow-md mt-32 z-10">
         <form action="#" method="post">
-            <div style="display: flex; justify-content: space-between;">
+            <div class="flex justify-between mb-4">
                 <div>
-                    <label for="fecha_ingreso">Fecha de ingreso:</label><br>
-                    <input type="date" id="fecha_ingreso" name="fecha_ingreso" required><br><br>
+                    <label for="fecha_ingreso" class="block"><strong>Fecha de ingreso:</strong></label>
+                    <input type="date" id="fecha_ingreso" name="fecha_ingreso" required class="border rounded w-full p-2">
                 </div>
                 <div>
-                    <label for="fecha_salida">Fecha de salida:</label><br>
-                    <input type="date" id="fecha_salida" name="fecha_salida" required><br><br>
+                    <label for="fecha_salida" class="block"><strong>Fecha de salida:</strong></label>
+                    <input type="date" id="fecha_salida" name="fecha_salida" required class="border rounded w-full p-2">
                 </div>
             </div>
 
-            <label for="salario_mensual">Salario mensual: </label><br>
-            <input type="text" id="salario_mensual" name="salario_mensual" required><br><br>
+            <div class="mb-4">
+                <label for="salario_mensual" class="block"><strong>Fecha de salida:</strong></label>
+                <input type="text" id="salario_mensual" name="salario_mensual" required class="border rounded w-full p-2">
+            </div>
 
-            <label for="tiene_auxilio_transporte">¿Tiene derecho a auxilio de transporte?</label><br>
-            <input type="radio" id="tiene_auxilio_transporte_si" name="tiene_auxilio_transporte" value="si">
-            <label for="tiene_auxilio_transporte_si">Sí</label><br>
-            <input type="radio" id="tiene_auxilio_transporte_no" name="tiene_auxilio_transporte" value="no">
-            <label for="tiene_auxilio_transporte_no">No</label><br>
+            <div class="mb-4">
+                <label for="tiene_auxilio_transporte" class="block"><strong>¿Tiene derecho a auxilio de transporte?</strong></label>
+                <div class="flex items-center mt-2">
+                    <input type="radio" id="tiene_auxilio_transporte_si" name="tiene_auxilio_transporte" value="si" class="mr-2">
+                    <label for="tiene_auxilio_transporte_si" class="mr-4"><strong>SÍ</strong></label>
+                    <input type="radio" id="tiene_auxilio_transporte_no" name="tiene_auxilio_transporte" value="no" class="mr-2">
+                    <label for="tiene_auxilio_transporte_no"><strong>NO</strong></label>
+                </div>
+            </div>
 
-            <label for="razon_salida">Razón de la salida:</label><br>
-            <textarea id="razon_salida" name="razon_salida" rows="4" cols="50" required></textarea><br><br>
+            <div class="mb-4">
+                <label for="razon_salida" class="block"><strong>Razón de la salida:</strong></label>
+                <textarea id="razon_salida" name="razon_salida" rows="4" class="border rounded w-full p-2" required></textarea>
+            </div>
 
-            <label for="dias_vacaciones">Días de vacaciones restantes:</label><br>
-            <input type="number" id="dias_vacaciones" name="dias_vacaciones" min="0" required><br><br>
+            <div class="mb-4">
+                <label for="dias_vacaciones" class="block"><strong>Días de vacaciones restantes:</strong></label>
+                <input type="number" id="dias_vacaciones" name="dias_vacaciones" min="0" required class="border rounded w-full p-2">
+            </div>
 
             <div class="flex items-center justify-center">
                 <button
@@ -64,7 +73,6 @@
                 </a>
             </div>
     </section>
-
 
 
 
