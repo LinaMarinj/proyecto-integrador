@@ -1,0 +1,20 @@
+#particles-js {
+  background: linear-gradient(176deg, #080810, #0f42af);
+}
+
+.bg-red-1200 {
+  background-color: #0f42af;
+}
+
+.hover\:bg-red-1200:hover {
+  background: linear-gradient(176deg, #0f42af,#0f42afe8);
+}
+
+.text-red-1200 {
+  color: #0f42af;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  50%, 100% { width: 100%; }
+}

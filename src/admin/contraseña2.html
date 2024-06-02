@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de Código</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="contraseña2.css">
+    <script src="../../js/particles.js"></script>
+</head>
+<body class="bg-blue-500 h-screen flex items-center justify-center relative">
+
+    <div id="particles-js" class="absolute h-full w-full left-0 top-0"></div>
+    
+    <main class="relative z-10">
+        <div class="bg-white p-20 rounded-lg shadow-lg max-w-2xl w-full">
+            <h2 class="text-4xl font-bold mb-12 text-center">Ingrese su Código</h2>
+            <form class="text-center">
+                <div class="flex justify-center mb-8">
+                    <input type="text" id="digit1" name="digit1" class="code-input" maxlength="1" required>
+                    <input type="text" id="digit2" name="digit2" class="code-input" maxlength="1" required>
+                    <input type="text" id="digit3" name="digit3" class="code-input" maxlength="1" required>
+                    <input type="text" id="digit4" name="digit4" class="code-input" maxlength="1" required>
+                    <input type="text" id="digit5" name="digit5" class="code-input" maxlength="1" required>
+                    <input type="text" id="digit6" name="digit6" class="code-input" maxlength="1" required>
+                </div>
+                <div class="flex items-center justify-center">
+                    <a href="contraseña3.html" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded focus:outline-none focus:shadow-outline">Verificar Código</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="../../js/particles-config.js"></script>
+</body>
+</html>

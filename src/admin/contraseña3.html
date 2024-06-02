@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Contraseña</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="contraseña3.css">
+    <script src="../../js/particles.js"></script>
+</head>
+<body class="bg-blue-500 h-screen flex items-center justify-center relative">
+
+    <div id="particles-js" class="absolute h-full w-full left-0 top-0"></div>
+    
+    <main class="relative z-10">
+        <div class="bg-white p-20 rounded-lg shadow-lg max-w-2xl w-full">
+            <h2 class="text-4xl font-bold mb-12 text-center">Nueva Contraseña</h2>
+            <form id="passwordForm">
+                <div class="mb-8">
+                    <label for="password" class="block text-gray-700 text-lg font-bold mb-4">Nueva Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu nueva contraseña" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div class="mb-8">
+                    <label for="confirmPassword" class="block text-gray-700 text-lg font-bold mb-4">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirma tu nueva contraseña" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div class="flex items-center justify-center">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded focus:outline-none focus:shadow-outline">Guardar Contraseña</button>
+                </div>
+            </form>
+            <div id="message" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <p class="text-gray-700 text-lg"><strong>Contraseña actualizada!</strong></p>
+                </div>
+            </div>
+        </div>
+        <div id="error-message" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <p id="error-text" class="text-red-600 text-lg"><strong>Error: Las contraseñas no coinciden o no cumplen con el mínimo de 8 caracteres</strong></p>
+            </div>
+        </div>
+            
+            
+    </main>
+
+    <script src="../../js/particles-config.js"></script>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById('passwordForm');
+            const message = document.getElementById('message');
+            const errorMessage = document.getElementById('error-message');
+            const errorText = document.getElementById('error-text');
+    
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+    
+                if (password !== confirmPassword || password.length < 8) {
+                    
+                    errorMessage.classList.remove('hidden');
+                    
+                    setTimeout(function() {
+                        errorMessage.classList.add('hidden');
+                    }, 3000);
+                   
+                    message.classList.add('hidden');
+    
+                    
+                    if (password !== confirmPassword) {
+                        errorText.textContent = "Error: Las contraseñas no coinciden";
+                    } else if (password.length < 8) {
+                        errorText.textContent = "Error: La contraseña debe tener al menos 8 caracteres";
+                    }
+                    
+                    errorText.classList.add('font-bold');
+                } else {
+                   
+    
+                    
+                    message.classList.remove('hidden');
+                    
+                    setTimeout(function() {
+                        message.classList.add('hidden');
+                    }, 2000);
+                    
+                    errorMessage.classList.add('hidden');
+
+
+                    window.location.href = '/src/admin/login.html';
+
+                }
+            });
+        });
+    </script>
+    
+    
+    
+
+</body>
+</html>

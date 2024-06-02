@@ -1,0 +1,38 @@
+#particles-js {
+  background: linear-gradient(176deg, #080810, #0f42af);
+}
+
+.bg-red-1200 {
+  background-color: #0f42af;
+}
+
+.hover\:bg-red-1200:hover {
+  background: linear-gradient(176deg, #0f42af,#0f42afe8);
+}
+
+.text-red-1200 {
+  color: #0f42af;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  50%, 100% { width: 100%; }
+}
+
+
+  /* Estilo para los campos de entrada del código */
+.code-input {
+    width: 40px; /* Ancho más delgado */
+    height: 50px; /* Altura un poco más alta */
+    text-align: center; /* Centrar el texto */
+    margin: 0 5px; /* Margen entre los campos */
+    border: 2px solid #ccc; /* Borde */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1.5rem; /* Tamaño del texto */
+    outline: none; /* Eliminar el contorno al enfocar */
+}
+
+/* Estilo al enfocar */
+.code-input:focus {
+    border-color: #4F46E5; /* Cambiar el color del borde */
+}
