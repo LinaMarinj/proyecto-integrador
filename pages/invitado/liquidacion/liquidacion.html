@@ -1,26 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liquidación</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="liquidacion.css">
+    <script>
+        function calcularLiquidacion(event) {
+            event.preventDefault();
 
+            const fechaIngreso = new Date(document.getElementById('fecha_ingreso').value);
+            const fechaSalida = new Date(document.getElementById('fecha_salida').value);
+            const salarioMensual = parseFloat(document.getElementById('salario_mensual').value);
+            const tieneAuxilioTransporte = document.querySelector('input[name="tiene_auxilio_transporte"]:checked').value;
+            const diasVacaciones = parseInt(document.getElementById('dias_vacaciones').value);
+
+            const diasTrabajados = (fechaSalida - fechaIngreso) / (1000 * 60 * 60 * 24);
+            const salarioDiario = salarioMensual / 30;
+
+            const auxilioTransporteMensual = 140606;
+            let auxilioTransporteDiario = 0;
+            if (tieneAuxilioTransporte === 'si') {
+                auxilioTransporteDiario = auxilioTransporteMensual / 30;
+            }
+
+            const liquidacion = (salarioDiario + auxilioTransporteDiario) * diasTrabajados + (salarioDiario * diasVacaciones);
+
+            const formatoCOP = new Intl.NumberFormat('es-CO', {
+                style: 'currency',
+                currency: 'COP'
+            });
+
+            const resultadoFormatted = formatoCOP.format(liquidacion);
+            const auxilioTransporteFormatted = formatoCOP.format(auxilioTransporteDiario * diasTrabajados);
+            const salarioDiarioFormatted = formatoCOP.format(salarioDiario);
+
+            // Redirigir a la nueva página con los resultados y datos adicionales
+            const queryString = `?resultado=${encodeURIComponent(resultadoFormatted)}` +
+                                `&dias_trabajados=${encodeURIComponent(diasTrabajados)}` +
+                                `&salario_diario=${encodeURIComponent(salarioDiarioFormatted)}` +
+                                `&auxilio_transporte=${encodeURIComponent(auxilioTransporteFormatted)}` +
+                                `&dias_vacaciones=${encodeURIComponent(diasVacaciones)}`;
+            window.location.href = `resultado.html${queryString}`;
+        }
+    </script>
 </head>
-
 <body class="flex">
     <iframe class="h-screen" src="../../../components/menu.html" frameborder="0"></iframe>
 
-
     <section class="contenedorLiquidar w-full max-w-lg bg-white p-8 rounded-lg shadow-md mt-5 z-10 mx-auto">
-
         <div class="w-full mt-4">
             <h1 style="font-weight: bold; font-size: 22px;" class="text-black flex justify-center">Liquidación Empleado</h1>
             <hr class="mt-4">
         </div>
-        <form action="#" method="post">
+        <form onsubmit="calcularLiquidacion(event)">
             <div class="flex justify-between mb-4 my-14">
                 <div>
                     <label for="fecha_ingreso" class="block"><strong>Fecha de ingreso:</strong></label>
@@ -33,8 +67,8 @@
             </div>
 
             <div class="mb-4">
-                <label for="salario_mensual" class="block"><strong>Fecha de salida:</strong></label>
-                <input type="text" id="salario_mensual" name="salario_mensual" required class="border rounded w-full p-2">
+                <label for="salario_mensual" class="block"><strong>Salario mensual:</strong></label>
+                <input type="number" id="salario_mensual" name="salario_mensual" required class="border rounded w-full p-2">
             </div>
 
             <div class="mb-4">
@@ -58,24 +92,13 @@
             </div>
 
             <div class="flex items-center justify-center">
-                <button
-                    class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4 "
-                    type="submit">Liquidar</button>
+                <button class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4" type="submit">Liquidar</button>
 
                 <a href="../../admin/empleados/gestionEmpleados.html">
-
-                    <button
-                        class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                        type="button">
-                        Cancelar
-                    </button>
+                    <button class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Cancelar</button>
                 </a>
             </div>
+        </form>
     </section>
-
-
-
-
 </body>
-
 </html>

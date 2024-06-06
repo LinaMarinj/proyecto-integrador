@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Liquidación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="liquidacion.css">
+    <script>
+        function mostrarResultado() {
+            const params = new URLSearchParams(window.location.search);
+            const resultado = params.get('resultado');
+            const diasTrabajados = params.get('dias_trabajados');
+            const salarioDiario = params.get('salario_diario');
+            const auxilioTransporte = params.get('auxilio_transporte');
+            const diasVacaciones = params.get('dias_vacaciones');
+
+            document.getElementById('resultado').innerHTML = `<strong>La liquidación total es:</strong> ${resultado}`;
+            document.getElementById('dias_trabajados').innerHTML = `<strong>Días trabajados:</strong> ${diasTrabajados}`;
+            document.getElementById('salario_diario').innerHTML = `<strong>Salario diario:</strong> ${salarioDiario}`;
+            document.getElementById('auxilio_transporte').innerHTML = `<strong>Auxilio de transporte:</strong> ${auxilioTransporte}`;
+            document.getElementById('dias_vacaciones').innerHTML = `<strong>Días de vacaciones restantes:</strong> ${diasVacaciones}`;
+        }
+
+        window.onload = mostrarResultado;
+    </script>
+</head>
+<body class="flex">
+    <iframe class="h-screen" src="../../../components/menu.html" frameborder="0"></iframe>
+
+    <section class="contenedorLiquidar w-full max-w-lg bg-white p-8 rounded-lg shadow-md mt-5 z-10 mx-auto">
+        <div class="w-full mt-4">
+            <h1 style="font-weight: bold; font-size: 22px;" class="text-black flex justify-center">Resultados de la Liquidación</h1>
+            <hr class="mt-4">
+        </div>
+        <div id="resultado" class="mt-4 text-center text-black">
+          
+        </div>
+        <div id="dias_trabajados" class="mt-4 text-center text-black">
+            
+        </div>
+        <div id="salario_diario" class="mt-4 text-center text-black">
+           
+        </div>
+        <div id="auxilio_transporte" class="mt-4 text-center text-black">
+            
+        </div>
+        <div id="dias_vacaciones" class="mt-4 text-center text-black">
+            
+        </div>
+        <div class="flex items-center justify-center mt-8">
+            <a href
