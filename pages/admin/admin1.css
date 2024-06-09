@@ -1,28 +1,45 @@
-body{
+body {
     background-color: #e4e5e6b0;
+    align-items: flex-end;
+}
+
+main {
+    margin-right: 2rem;
+    width: 100%;
+}
+
+hr {
+    border: none;
+    height: 0.1px;
+    background-color: #00000073;
+    margin-right: 2rem;
 }
 
 .contenedorAdmin {
-    max-width: 640px;
-    margin: 1rem auto;
+    margin: 0rem auto;
+    margin-top: 1rem;
     background-color: white;
     padding: 2.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.logo{
+.logo {
     width: 10%;
+    display: block;
+    margin: auto;
 }
 
 .botones {
+    display: block;
+    margin: auto;
     background-color: #0f42af;
     color: white;
     border-radius: 5px;
     width: 60px;
 }
 
-.botones:hover{
-    background: linear-gradient(176deg,  #0f42af,  #335ebd);
-  
+.botones:hover {
+    background: linear-gradient(176deg, #0f42af, #335ebd);
+
 }

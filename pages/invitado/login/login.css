@@ -25,3 +25,36 @@
     animation: typing 8s steps(40, end) infinite,
     blink-caret .75s step-end infinite;
   }
+
+
+  /*modal*/
+
+.modal {
+  display: none; /* Oculta la modal por defecto */
+  position: fixed; /* Posición fija */
+  z-index: 50; /* Asegura que la modal esté encima de otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Habilita el desplazamiento si es necesario */
+  background-color: rgba(0, 0, 0, 0.774); /* Fondo oscuro con opacidad */
+}
+
+/* Contenedor de la modal */
+.modal-content {
+  text-align: center;
+  background-color: #fefefe;
+  margin: 15% auto; /* Centrado de la modal */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Ancho de la modal */
+  height: 40%;
+}
+
+#chuloverde{
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+
+}
