@@ -30,11 +30,12 @@ class SidebarMenu extends HTMLElement {
         <div id="particles-js" class="absolute h-full left-0 lg:w-1/2 md:w-full z-10"></div>
         <div class="bg-blue-800 rounded-lg h-full relative">
           <div class="p-4 flex flex-wrap items-center relative z-10">
-            <img class="w-20 p-3" src="../assets/img/logomenu.png" alt="">
+            <img class="w-20 p-3" src="../../assets/img/logomenu.png" alt="">
             <span class="font-bold my-4 text-center">Nómina Solutions</span>
           </div>
           <ul class="space-y-2 px-4 relative z-10">
             <li>
+            <a href="admin1.html">
               <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
                 onclick="toggleDropdown('menu1')">
                 <span class="flex items-center">
@@ -50,8 +51,10 @@ class SidebarMenu extends HTMLElement {
                   <span class="ml-4 option-menu">Inicio</span>
                 </span>
               </button>
+             </a>
             </li>
             <li>
+            <a href="../admin/empleados/gestionEmpleados.html">
               <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
                 onclick="toggleDropdown('menu2')">
                 <span class="flex items-center">
@@ -67,9 +70,11 @@ class SidebarMenu extends HTMLElement {
                   <span class="ml-4 option-menu">Empleados</span>
                 </span>
               </button>
+              </a>
     
             </li>
             <li>
+            <a href="../invitado/liquidacion/liquidacion.html">
               <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
                 onclick="toggleDropdown('menu3')">
                 <span class="flex items-center">
@@ -84,14 +89,16 @@ class SidebarMenu extends HTMLElement {
                       <line x1="11" y1="15" x2="13" y2="15" />
                     </svg>
                   </span>
-                  <a href="../invitado/liquidacion/liquidacion.html">
+
                   <span class="ml-4 option-menu">Liquidar</span>
-                  </a>
+
                 </span>
               </button>
+              </a>
     
             </li>
             <li>
+            <a href="../../index.html">
               <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
                 onclick="toggleDropdown('menu4')">
                 <span class="flex items-center">
@@ -107,7 +114,8 @@ class SidebarMenu extends HTMLElement {
                   <span class="ml-4 option-menu">Cerrar sesión</span>
                 </span>
               </button>
-    
+              </a>
+
             </li>
             <!-- Agregar más opciones según sea necesario -->
           </ul>
@@ -124,11 +132,11 @@ class SidebarMenu extends HTMLElement {
     shadow.appendChild(template.content.cloneNode(true));
 
     const particlesScript = document.createElement('script');
-    particlesScript.src = '../../components/particles.js';
+    particlesScript.src = new URL('../../components/particles.js', import.meta.url).href;
     particlesScript.onload = () => {
       setTimeout(() => {
         const particlesConfigScript = document.createElement('script');
-        particlesConfigScript.src = '../../components/particles-config.js';
+        particlesConfigScript.src = new URL('../../components/particles-config.js', import.meta.url).href;
         shadow.appendChild(particlesConfigScript);
       }, 1000);
     };

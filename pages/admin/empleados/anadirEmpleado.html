@@ -7,17 +7,18 @@
     <title>Añadir Empleado</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="anadirEmpleado.css">
+    <script type="module" src="../../../components/menu.js" defer></script>
 </head>
 
 
 <body class="flex">
 
-    <iframe class="h-screen" src="../../../components/menu.html" frameborder="0"></iframe>
+    <sidebar-menu></sidebar-menu>
 
 
     <main>
         <section>
-            
+
             <div id="formulario" class="flex justify-center mx-auto my-10">
 
                 <form class="bg-white shadow-md rounded px-8 pb-8 mb-4 p-4 mx-72">
@@ -100,8 +101,7 @@
 
                         <a href="gestionEmpleados.html">
 
-                            <button
-                                class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            <button class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                 type="button">
                                 Cancelar
                             </button>
