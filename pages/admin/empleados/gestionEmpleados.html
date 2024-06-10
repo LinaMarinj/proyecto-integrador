@@ -100,10 +100,11 @@
                         </a>
 
                     </li>
-                
+
                 </ul>
                 <div class="p-6 flex justify-center relative z-10">
-                    <button onclick="toggleMenu()" id="toggleButton" class="bg-blue-600 text-white p-2 rounded-full focus:outline-none">
+                    <button onclick="toggleMenu()" id="toggleButton"
+                        class="bg-blue-600 text-white p-2 rounded-full focus:outline-none">
                         &lt;
                     </button>
                 </div>
@@ -266,7 +267,7 @@
 
 
 
-    
+
     <div id="myModal" class="modal">
 
         <div class="modal-content">
@@ -282,25 +283,25 @@
                     <form action="#">
                         <div class="flex justify-between mb-4 my-14">
                             <div>
-                                <label for="fecha_ingreso" class="block"><strong>Fecha de ingreso:</strong></label>
+                                <label for="fecha_ingreso" class="block"><strong>*Fecha de ingreso:</strong></label>
                                 <input type="date" id="fecha_ingreso" name="fecha_ingreso" required
                                     class="border rounded w-full p-2">
                             </div>
                             <div>
-                                <label for="fecha_salida" class="block"><strong>Fecha de salida:</strong></label>
+                                <label for="fecha_salida" class="block"><strong>*Fecha de salida:</strong></label>
                                 <input type="date" id="fecha_salida" name="fecha_salida" required
                                     class="border rounded w-full p-2">
                             </div>
                         </div>
 
                         <div class="mb-4">
-                            <label for="salario_mensual" class="block"><strong>Salario mensual:</strong></label>
+                            <label for="salario_mensual" class="block"><strong>*Salario mensual:</strong></label>
                             <input type="number" id="salario_mensual" name="salario_mensual" required
                                 class="border rounded w-full p-2">
                         </div>
 
                         <div class="mb-4">
-                            <label for="tiene_auxilio_transporte" class="block"><strong>¿Tiene derecho a auxilio de
+                            <label for="tiene_auxilio_transporte" class="block"><strong>*¿Tiene derecho a auxilio de
                                     transporte?</strong></label>
                             <div class="flex items-center mt-2">
                                 <input type="radio" id="tiene_auxilio_transporte_si" name="tiene_auxilio_transporte"
@@ -319,7 +320,7 @@
                         </div>
 
                         <div class="mb-4">
-                            <label for="dias_vacaciones" class="block"><strong>Días de vacaciones
+                            <label for="dias_vacaciones" class="block"><strong>*Días de vacaciones
                                     restantes:</strong></label>
                             <input type="number" id="dias_vacaciones" name="dias_vacaciones" min="0" required
                                 class="border rounded w-full p-2">
@@ -381,7 +382,7 @@
 
 
     <script>
-        
+
         var modal = document.getElementById("myModal");
         var resultadoLiquidacion = document.getElementById("resultadoLiquidacion");
         var formularioLiquidacion = document.getElementById("formularioLiquidacion");
@@ -411,11 +412,23 @@
 
         function calcularLiquidacion() {
 
+            if (
+                !document.getElementById('fecha_ingreso').value ||
+                !document.getElementById('fecha_salida').value ||
+                !document.getElementById('salario_mensual').value ||
+                !document.querySelector('input[name="tiene_auxilio_transporte"]:checked').value ||
+                !document.getElementById('dias_vacaciones').value
+            ) {
+                alert('¡Error!\nCompleta todos los campos');
+                return;
+            }
+
             const fechaIngreso = new Date(document.getElementById('fecha_ingreso').value);
             const fechaSalida = new Date(document.getElementById('fecha_salida').value);
             const salarioMensual = parseFloat(document.getElementById('salario_mensual').value);
             const tieneAuxilioTransporte = document.querySelector('input[name="tiene_auxilio_transporte"]:checked').value;
             const diasVacaciones = parseInt(document.getElementById('dias_vacaciones').value);
+
 
             const diasTrabajados = (fechaSalida - fechaIngreso) / (1000 * 60 * 60 * 24);
             const salarioDiario = salarioMensual / 30;
@@ -437,7 +450,7 @@
             const auxilioTransporteFormatted = formatoCOP.format(auxilioTransporteDiario * diasTrabajados);
             const salarioDiarioFormatted = formatoCOP.format(salarioDiario);
 
-          
+
             const queryString = `?resultado=${encodeURIComponent(resultadoFormatted)}` +
                 `&dias_trabajados=${encodeURIComponent(diasTrabajados)}` +
                 `&salario_diario=${encodeURIComponent(salarioDiarioFormatted)}` +

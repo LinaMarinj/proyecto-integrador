@@ -81,22 +81,22 @@
         <form onsubmit="calcularLiquidacion(event)">
             <div class="flex justify-between mb-4 my-14">
                 <div>
-                    <label for="fecha_ingreso" class="block"><strong>Fecha de ingreso:</strong></label>
+                    <label for="fecha_ingreso" class="block"><strong>*Fecha de ingreso:</strong></label>
                     <input type="date" id="fecha_ingreso" name="fecha_ingreso" required class="border rounded w-full p-2">
                 </div>
                 <div>
-                    <label for="fecha_salida" class="block"><strong>Fecha de salida:</strong></label>
+                    <label for="fecha_salida" class="block"><strong>*Fecha de salida:</strong></label>
                     <input type="date" id="fecha_salida" name="fecha_salida" required class="border rounded w-full p-2">
                 </div>
             </div>
 
             <div class="mb-4">
-                <label for="salario_mensual" class="block"><strong>Salario mensual:</strong></label>
+                <label for="salario_mensual" class="block"><strong>*Salario mensual:</strong></label>
                 <input type="number" id="salario_mensual" name="salario_mensual" required class="border rounded w-full p-2">
             </div>
 
             <div class="mb-4">
-                <label for="tiene_auxilio_transporte" class="block"><strong>¿Tiene derecho a auxilio de transporte?</strong></label>
+                <label for="tiene_auxilio_transporte" class="block"><strong>*¿Tiene derecho a auxilio de transporte?</strong></label>
                 <div class="flex items-center mt-2">
                     <input type="radio" id="tiene_auxilio_transporte_si" name="tiene_auxilio_transporte" value="si" class="mr-2">
                     <label for="tiene_auxilio_transporte_si" class="mr-4"><strong>SÍ</strong></label>
@@ -105,21 +105,18 @@
                 </div>
             </div>
 
-            <div class="mb-4">
-                <label for="razon_salida" class="block"><strong>Razón de la salida:</strong></label>
-                <textarea id="razon_salida" name="razon_salida" rows="4" class="border rounded w-full p-2" required></textarea>
-            </div>
+
 
             <div class="mb-4">
-                <label for="dias_vacaciones" class="block"><strong>Días de vacaciones restantes:</strong></label>
+                <label for="dias_vacaciones" class="block"><strong>*Días de vacaciones restantes:</strong></label>
                 <input type="number" id="dias_vacaciones" name="dias_vacaciones" min="0" required class="border rounded w-full p-2">
             </div>
 
             <div class="flex items-center justify-center">
-                <button class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4" type="submit">Liquidar</button>
+                <button class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4" type="submit">Simular</button>
 
-                <a href="../../admin/empleados/gestionEmpleados.html">
-                    <button class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Cancelar</button>
+                <a href="../../../index.html ">
+                    <button class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Volver al Inicio</button>
                 </a>
             </div>
         </form>
