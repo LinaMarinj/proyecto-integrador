@@ -35,7 +35,7 @@ class SidebarMenu extends HTMLElement {
           </div>
           <ul class="space-y-2 px-4 relative z-10">
             <li>
-            <a href="/pages/admin/admin1.html">
+            <a href="/pages/admin/admin1.html" data-link="/pages/admin/admin1.html">
               <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
                 onclick="toggleDropdown('menu1')">
                 <span class="flex items-center">
@@ -54,7 +54,7 @@ class SidebarMenu extends HTMLElement {
              </a>
             </li>
             <li>
-            <a href="../admin/empleados/gestionEmpleados.html">
+            <a href="/pages/admin/empleados/gestionEmpleados.html">
               <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
                 onclick="toggleDropdown('menu2')">
                 <span class="flex items-center">
@@ -145,6 +145,7 @@ class SidebarMenu extends HTMLElement {
 
   connectedCallback() {
     this.shadowRoot.querySelector('#toggleButton').addEventListener('click', this.toggleMenu.bind(this));
+    this.adjustLinks();
   }
 
   disconnectedCallback() {
@@ -157,6 +158,11 @@ class SidebarMenu extends HTMLElement {
     sidebar.classList.toggle('menu-hidden');
     this.shadowRoot.querySelector('#toggleButton').textContent = sidebar.classList.contains('menu-expanded') ? '<' : '>';
   }
+
+  adjustLinks() {
+   
+  }
+
 }
 
 customElements.define('sidebar-menu', SidebarMenu);
