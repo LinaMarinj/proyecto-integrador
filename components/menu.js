@@ -35,7 +35,7 @@ class SidebarMenu extends HTMLElement {
           </div>
           <ul class="space-y-2 px-4 relative z-10">
             <li>
-            <a href="admin1.html">
+            <a href="/pages/admin/admin1.html">
               <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
                 onclick="toggleDropdown('menu1')">
                 <span class="flex items-center">
