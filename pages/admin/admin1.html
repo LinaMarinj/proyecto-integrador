@@ -5,14 +5,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
-    <base href="/">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/pages/admin/admin1.css">
-    <script type="module" src="/components/menu.js" defer></script>
+    <link rel="stylesheet" href="admin1.css">
 </head>
 
 <body class="flex">
-    <sidebar-menu></sidebar-menu>
+    <style>
+        .menu-hidden {
+            width: 8rem;
+        }
+
+        .menu-hidden .option-menu {
+            display: none;
+        }
+
+        .menu-expanded {
+            width: 18rem;
+        }
+    </style>
+
+    <!-- Menú lateral -->
+    <div class="h-screen">
+        <div id="sidebar" class="menu-expanded h-screen p-4 text-white transition-all duration-300 relative">
+            <div id="particles-js" class="absolute h-full left-0 lg:w-1/2 md:w-full z-10"></div>
+            <div class="bg-blue-800 rounded-lg h-full relative">
+                <div class="p-4 flex flex-wrap items-center relative z-10">
+                    <img class="w-20 p-3" src="../../../assets/img/logomenu.png" alt="">
+                    <span class="font-bold my-4 text-center">Nómina Solutions</span>
+                </div>
+                <ul class="space-y-2 px-4 relative z-10">
+                    <li>
+                        <a href="admin1.html">
+                            <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
+                                onclick="toggleDropdown('menu1')">
+                                <span class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home"
+                                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                                        <path d="M9 21h6" />
+                                    </svg>
+
+                                    <span class="ml-4 option-menu">Inicio</span>
+                                </span>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="empleados/gestionEmpleados.html">
+                            <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
+                                onclick="toggleDropdown('menu2')">
+                                <span class="flex items-center">
+                                    <span class="inline-block w-6 h-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-user" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <circle cx="12" cy="7" r="4" />
+                                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                        </svg>
+                                    </span>
+                                    <span class="ml-4 option-menu">Empleados</span>
+                                </span>
+                            </button>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="../../index.html">
+                            <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
+                                onclick="toggleDropdown('menu4')">
+                                <span class="flex items-center">
+                                    <span class="inline-block w-6 h-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-logout" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                                            <path d="M7 12h14l-3 -3m0 6l3 -3" />
+                                        </svg>
+                                    </span>
+                                    <span class="ml-4 option-menu">Cerrar sesión</span>
+                                </span>
+                            </button>
+                        </a>
+
+                    </li>
+                    <!-- Agregar más opciones según sea necesario -->
+                </ul>
+                <div class="p-6 flex justify-center relative z-10">
+                    <button onclick="toggleMenu()" id="toggleButton" class="bg-blue-600 text-white p-2 rounded-full focus:outline-none">
+                        &lt;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.querySelector('#sidebar');
+            sidebar.classList.toggle('menu-expanded');
+            sidebar.classList.toggle('menu-hidden');
+            document.querySelector('#toggleButton').textContent = sidebar.classList.contains('menu-expanded') ? '<' : '>';
+        }
+    </script>
 
 
     <section class="flex justify-center flex-wrap my-4">

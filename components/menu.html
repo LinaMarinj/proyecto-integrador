@@ -1,15 +1,6 @@
-class SidebarMenu extends HTMLElement {
-  constructor() {
-    super();
 
-    const shadow = this.attachShadow({ mode: 'open' });
-
-    const template = document.createElement('template');
-    template.innerHTML = `
 
       <style>
-      @import url('https://cdn.jsdelivr.net/npm/tailwindcss@^2/dist/tailwind.min.css');
-
 
         .menu-hidden {
           width: 8rem;
@@ -35,7 +26,7 @@ class SidebarMenu extends HTMLElement {
           </div>
           <ul class="space-y-2 px-4 relative z-10">
             <li>
-            <a href="/pages/admin/admin1.html" data-link="/pages/admin/admin1.html">
+            <a href="#" data-link="/pages/admin/admin1.html">
               <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
                 onclick="toggleDropdown('menu1')">
                 <span class="flex items-center">
@@ -54,7 +45,7 @@ class SidebarMenu extends HTMLElement {
              </a>
             </li>
             <li>
-            <a href="/pages/admin/empleados/gestionEmpleados.html">
+            <a href="../admin/empleados/gestionEmpleados.html">
               <button class="text-left px-4 py-2 flex items-center justify-between hover:bg-blue-700"
                 onclick="toggleDropdown('menu2')">
                 <span class="flex items-center">
@@ -160,7 +151,15 @@ class SidebarMenu extends HTMLElement {
   }
 
   adjustLinks() {
-   
+    const links = this.shadowRoot.querySelectorAll('a[data-link]');
+    const currentPath = window.location.pathname;
+    const depth = currentPath.split('/').length - 2;
+    const basePath = '../'.repeat(depth);
+
+    links.forEach(link => {
+      const originalLink = link.getAttribute('data-link');
+      link.href = basePath + originalLink;
+    });
   }
 
 }
