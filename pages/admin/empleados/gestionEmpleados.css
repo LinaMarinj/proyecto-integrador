@@ -114,3 +114,59 @@ tr:hover {
     background: linear-gradient(176deg, #0f42af, #335ebd);
 
 }
+
+
+/*modal*/
+.modal {
+    display: none;
+    /* Oculta la modal por defecto */
+    position: fixed;
+    /* Posición fija */
+    z-index: 50;
+    /* Asegura que la modal esté encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Ancho completo */
+    height: 100%;
+    /* Alto completo */
+    overflow: auto;
+    /* Habilita el desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.774);
+    
+}
+
+/* Contenedor de la modal */
+.modal-content {
+    text-align: center;
+    background-color: #fefefe;
+    margin: 2rem auto;
+    /* Centrado de la modal */
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 600px;
+    /* Ancho de la modal */
+
+}
+
+
+
+.contenedorLiquidar {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+}
+
+
+
+.botones {
+    background-color: #0f42af;
+    color: white;
+
+
+}
+
+.botones:hover {
+    background: linear-gradient(176deg, #0f42af, #335ebd);
+
+}

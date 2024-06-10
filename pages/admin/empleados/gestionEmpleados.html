@@ -76,12 +76,10 @@
                                 </button>
                             </a>
 
-                            <a href="../../invitado/liquidacion/liquidacion.html"> <button
-                                    class="botonliquidar text-black py-2 px-4 rounded border">
-                                    <img src="../../../assets/img/icono-liquidar.webp" alt="Liquidar"
-                                        class="inline-block h-4 w-4">
-                            </a>
-
+                            <button onclick="abrirModalLiquidacion()"
+                                class="botonliquidar text-black py-2 px-4 rounded border">
+                                <img src="../../../assets/img/icono-liquidar.webp" alt="Liquidar"
+                                    class="inline-block h-4 w-4">
                             </button>
                         </td>
 
@@ -109,11 +107,12 @@
 
                                 </button>
                             </a>
-                            <a href="/pages/invitado/liquidacion/liquidacion.html"> <button
-                                    class="botonliquidar text-black py-2 px-4 rounded border">
-                                    <img src="../../../assets/img/icono-liquidar.webp" alt="Liquidar"
-                                        class="inline-block h-4 w-4">
-                            </a>
+
+                            <button onclick="abrirModalLiquidacion()"
+                                class="botonliquidar text-black py-2 px-4 rounded border">
+                                <img src="../../../assets/img/icono-liquidar.webp" alt="Liquidar"
+                                    class="inline-block h-4 w-4">
+                            </button>
                         </td>
 
                     </tr>
@@ -139,13 +138,13 @@
 
                                 </button>
                             </a>
-                            <a href="../../invitado/liquidacion/liquidacion.html"> <button
-                                    class="botonliquidar text-black py-2 px-4 rounded border">
-                                    <img src="../../../assets/img/icono-liquidar.webp" alt="Liquidar"
-                                        class="inline-block h-4 w-4">
+                            <button onclick="abrirModalLiquidacion()"
+                                class="botonliquidar text-black py-2 px-4 rounded border">
+                                <img src="../../../assets/img/icono-liquidar.webp" alt="Liquidar"
+                                    class="inline-block h-4 w-4">
 
-                                </button>
-                            </a>
+                            </button>
+
 
                         </td>
 
@@ -157,6 +156,213 @@
 
     </main>
 
+
+
+    <!-- La ventana modal -->
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <div class="flex justify-center flex-wrap">
+
+                <section id="formularioLiquidacion"
+                    class="contenedorLiquidar w-full max-w-lg bg-white p-8 rounded-lg z-10 mx-auto">
+                    <div class="w-full">
+                        <h1 style="font-weight: bold; font-size: 22px;" class="text-black flex justify-center">
+                            Liquidación Empleado</h1>
+                        <hr class="mt-4">
+                    </div>
+                    <form action="#">
+                        <div class="flex justify-between mb-4 my-14">
+                            <div>
+                                <label for="fecha_ingreso" class="block"><strong>Fecha de ingreso:</strong></label>
+                                <input type="date" id="fecha_ingreso" name="fecha_ingreso" required
+                                    class="border rounded w-full p-2">
+                            </div>
+                            <div>
+                                <label for="fecha_salida" class="block"><strong>Fecha de salida:</strong></label>
+                                <input type="date" id="fecha_salida" name="fecha_salida" required
+                                    class="border rounded w-full p-2">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="salario_mensual" class="block"><strong>Salario mensual:</strong></label>
+                            <input type="number" id="salario_mensual" name="salario_mensual" required
+                                class="border rounded w-full p-2">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="tiene_auxilio_transporte" class="block"><strong>¿Tiene derecho a auxilio de
+                                    transporte?</strong></label>
+                            <div class="flex items-center mt-2">
+                                <input type="radio" id="tiene_auxilio_transporte_si" name="tiene_auxilio_transporte"
+                                    value="si" class="mr-2">
+                                <label for="tiene_auxilio_transporte_si" class="mr-4"><strong>SÍ</strong></label>
+                                <input type="radio" id="tiene_auxilio_transporte_no" name="tiene_auxilio_transporte"
+                                    value="no" class="mr-2">
+                                <label for="tiene_auxilio_transporte_no"><strong>NO</strong></label>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="razon_salida" class="block"><strong>Razón de la salida:</strong></label>
+                            <textarea id="razon_salida" name="razon_salida" rows="4" class="border rounded w-full p-2"
+                                required></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="dias_vacaciones" class="block"><strong>Días de vacaciones
+                                    restantes:</strong></label>
+                            <input type="number" id="dias_vacaciones" name="dias_vacaciones" min="0" required
+                                class="border rounded w-full p-2">
+                        </div>
+
+                        <div class="flex items-center justify-center">
+                            <button type="button"
+                                class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4"
+                                onclick="calcularLiquidacion()">Liquidar</button>
+
+
+                            <button onclick="cerrarModalLiquidacion()"
+                                class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                type="button">Cancelar</button>
+
+                        </div>
+                    </form>
+                </section>
+
+                <section id="resultadoLiquidacion"
+                    class="contenedorLiquidar w-full max-w-lg bg-white p-8 rounded-lg mt-5 z-10 mx-auto">
+                    <div class="w-full mt-4">
+                        <h1 style="font-weight: bold; font-size: 22px;" class="text-black flex justify-center">
+                            Resultados de la
+                            Liquidación</h1>
+                        <hr class="mt-4">
+                    </div>
+                    <div id="resultado" class="mt-4 text-center text-black">
+
+                    </div>
+                    <div id="dias_trabajados" class="mt-4 text-center text-black">
+
+                    </div>
+                    <div id="salario_diario" class="mt-4 text-center text-black">
+
+                    </div>
+                    <div id="auxilio_transporte" class="mt-4 text-center text-black">
+
+                    </div>
+                    <div id="dias_vacaciones" class="mt-4 text-center text-black">
+
+                    </div>
+                    <div class="flex items-center justify-center mt-8">
+
+                        <button onclick="abrirModalLiquidacion()"
+                            class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-4"
+                            type="button">Nueva Liquidación</button>
+
+
+                        <button onclick="cerrarModalLiquidacion()"
+                            class="botones font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            type="button">Cerrar</button>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // JavaScript para abrir y cerrar la modal
+        var modal = document.getElementById("myModal");
+        var resultadoLiquidacion = document.getElementById("resultadoLiquidacion");
+        var formularioLiquidacion = document.getElementById("formularioLiquidacion");
+
+        function abrirModalLiquidacion() {
+            modal.style.display = "block";
+            resultadoLiquidacion.style.display = "none";
+            formularioLiquidacion.style.display = "block";
+            document.getElementById('fecha_ingreso').value = "";
+            document.getElementById('fecha_salida').value = "";
+            document.getElementById('salario_mensual').value = "";
+            document.getElementById('dias_vacaciones').value = "";
+            document.getElementById('razon_salida').value = "";
+        }
+
+        function cerrarModalLiquidacion() {
+            modal.style.display = "none";
+            resultadoLiquidacion.style.display = "none";
+            formularioLiquidacion.style.display = "block";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                cerrarModalLiquidacion();
+            }
+        }
+
+        function calcularLiquidacion() {
+
+            const fechaIngreso = new Date(document.getElementById('fecha_ingreso').value);
+            const fechaSalida = new Date(document.getElementById('fecha_salida').value);
+            const salarioMensual = parseFloat(document.getElementById('salario_mensual').value);
+            const tieneAuxilioTransporte = document.querySelector('input[name="tiene_auxilio_transporte"]:checked').value;
+            const diasVacaciones = parseInt(document.getElementById('dias_vacaciones').value);
+
+            const diasTrabajados = (fechaSalida - fechaIngreso) / (1000 * 60 * 60 * 24);
+            const salarioDiario = salarioMensual / 30;
+
+            const auxilioTransporteMensual = 140606;
+            let auxilioTransporteDiario = 0;
+            if (tieneAuxilioTransporte === 'si') {
+                auxilioTransporteDiario = auxilioTransporteMensual / 30;
+            }
+
+            const liquidacion = (salarioDiario + auxilioTransporteDiario) * diasTrabajados + (salarioDiario * diasVacaciones);
+
+            const formatoCOP = new Intl.NumberFormat('es-CO', {
+                style: 'currency',
+                currency: 'COP'
+            });
+
+            const resultadoFormatted = formatoCOP.format(liquidacion);
+            const auxilioTransporteFormatted = formatoCOP.format(auxilioTransporteDiario * diasTrabajados);
+            const salarioDiarioFormatted = formatoCOP.format(salarioDiario);
+
+            // Redirigir a la nueva página con los resultados y datos adicionales
+            const queryString = `?resultado=${encodeURIComponent(resultadoFormatted)}` +
+                `&dias_trabajados=${encodeURIComponent(diasTrabajados)}` +
+                `&salario_diario=${encodeURIComponent(salarioDiarioFormatted)}` +
+                `&auxilio_transporte=${encodeURIComponent(auxilioTransporteFormatted)}` +
+                `&dias_vacaciones=${encodeURIComponent(diasVacaciones)}`;
+
+            mostrarResultado(
+                resultadoFormatted,
+                diasTrabajados,
+                salarioDiarioFormatted,
+                auxilioTransporteFormatted,
+                diasVacaciones
+            );
+
+            formularioLiquidacion.style.display = "none";
+            resultadoLiquidacion.style.display = "block";
+
+        }
+
+        function mostrarResultado(
+            resultado,
+            diasTrabajados,
+            salarioDiario,
+            auxilioTransporte,
+            diasVacaciones
+        ) {
+            document.getElementById('resultado').innerHTML = `<strong>La liquidación total es:</strong> ${resultado}`;
+            document.getElementById('dias_trabajados').innerHTML = `<strong>Días trabajados:</strong> ${diasTrabajados}`;
+            document.getElementById('salario_diario').innerHTML = `<strong>Salario diario:</strong> ${salarioDiario}`;
+            document.getElementById('auxilio_transporte').innerHTML = `<strong>Auxilio de transporte:</strong> ${auxilioTransporte}`;
+            document.getElementById('dias_vacaciones').innerHTML = `<strong>Días de vacaciones restantes:</strong> ${diasVacaciones}`;
+        }
+    </script>
 
 
 </body>
