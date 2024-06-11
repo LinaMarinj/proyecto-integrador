@@ -25,12 +25,13 @@
                     <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirma tu nueva contraseña" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                 </div>
                 <div class="flex items-center justify-center">
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded focus:outline-none focus:shadow-outline">Guardar Contraseña</button>
+                    <button type="submit" class="bg-blue-700  hover:bg-blue-500 text-white font-bold py-4 px-8 rounded focus:outline-none focus:shadow-outline">Guardar Contraseña</button>
                 </div>
             </form>
             <div id="message" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                 <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <p class="text-gray-700 text-lg"><strong>Contraseña actualizada!</strong></p>
+                    <img id="chuloverde" src="../../../assets/img/chuloverde.png" alt="">
+                    <p class="text-gray-700 text-lg"><strong>Contraseña actualizada</strong></p>
                 </div>
             </div>
         </div>
@@ -77,19 +78,15 @@
                     
                     errorText.classList.add('font-bold');
                 } else {
-                   
-    
                     
                     message.classList.remove('hidden');
                     
+                    errorMessage.classList.add('hidden');
+                    
                     setTimeout(function() {
                         message.classList.add('hidden');
-                    }, 2000);
-                    
-                    errorMessage.classList.add('hidden');
-
-
-                    window.location.href = '../login/login.html';
+                        window.location.href = '../login/login.html';
+                    }, 3000);
 
                 }
             });

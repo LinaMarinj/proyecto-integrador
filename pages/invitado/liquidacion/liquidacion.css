@@ -1,4 +1,4 @@
-body{
+body {
     background: linear-gradient(176deg, #080810, #0f42af);
 }
 
@@ -17,11 +17,11 @@ body{
 .botones {
     background-color: #0f42af;
     color: white;
-    
+
 
 }
 
-.botones:hover{
-    background: linear-gradient(176deg,  #0f42af,  #335ebd);
-  
+.botones:hover {
+    background: linear-gradient(176deg, #0f42af, #335ebd);
+
 }
